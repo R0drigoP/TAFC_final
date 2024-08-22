@@ -1,0 +1,53 @@
+Instructions to run the program:
+
+To run all code, you should install ROOT CERN. Please follow these instructions: https://label2.tecnico.ulisboa.pt/IC/HowTo/HowTo_ROOT.php
+
+For small atoms, in the genetic_algorithms folder:
+	1. To compile and run the program without parallelization, use the following commands:
+		make
+		./main
+
+	2. To  compile and run the program with parallelization, use the following command:
+		make parallel
+		./main
+
+	3. To clean the executables, run the following command:
+		make clean
+
+	The program generates two files, "best_molecule.bs" and "best_molecule.mv", containing the atom positions of the best molecule. These files can be viewed using Xbs.
+	A graph with the potential as a function of the function evaluations is saved as “evolution.pdf”
+	To adjust the parameters of the population, such as population size, cluster size, and mating and reproduction parameters, go to "main.cpp".
+
+To test the convergence of the 13 atom cluster, in the convergence folder:
+	1. To compile and run the program without parallelization, use the following commands:
+		make
+		./main
+
+	2. To  compile and run the program with parallelization, use the following command:
+		make parallel
+		./main
+
+	3. To clean the executables, run the following command:
+		make clean
+
+	4. To optimize the parameters, run the script opt.py
+	Note that for this feature you should first import libraries such as optuna matplotlib pandas plotly kaleido.
+	The set of best parameters will be saved in parameters.h and some useful plots will be found.
+
+To find the best parameters to achieve the global minimum of bigger clusters, in the big folder:
+	1. To compile and run the program without parallelization, use the following commands:
+		make
+		./main
+
+	2. To  compile and run the program with parallelization, use the following command:
+		make parallel
+		./main
+
+	3. To clean the executables, run the following command:
+		make clean
+
+	4. To optimize the parameters, run the script opt.py
+		You can change the total number of atoms, and the number of atoms in each concentric shell, as well as the total iterations and the iterations at which the algorithm starts to find the global minimum at each mutation in the config.h file.
+		Note that for this feature you should first import libraries such as optuna matplotlib pandas plotly kaleido
+		The set of best parameters will be saved in parameters.h and some useful plots will be found.
+		The best configurations will be saved in the files that you chose in best_bs and best_mv
